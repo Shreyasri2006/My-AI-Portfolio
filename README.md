@@ -1,54 +1,21 @@
-# Shreya Sri — AI × Data × Code Portfolio
+# Shreya Sri Portfolio — AI Voice Upgrade
 
-A premium, responsive personal portfolio for Shreya Sri, an Artificial Intelligence & Data Science undergraduate.
+This package adds a real AI backend to the portfolio.
 
-## Included
+## Files
+- `server.js` — secure backend endpoint
+- `package.json` — Node dependencies
+- `.env.example` — API-key template
+- `.gitignore` — prevents secrets from being uploaded
+- `script.js` — browser AI chat + voice interaction
+- `style.css` — voice-button styling
 
-- Responsive portfolio homepage
-- About section
-- Skills / technology stack
-- Exactly 3 projects
-- Real GitHub links for AquaSentinel AI and Trip Crafter
-- Hackathon photo placeholder
-- Certification gallery placeholder
-- Contact section
-- Local portfolio AI assistant prototype
-- Browser speech-recognition input prototype
+## Setup
+1. Put these files in your existing portfolio root.
+2. Run `npm install`.
+3. Copy `.env.example` to `.env`.
+4. Put your API key in `.env`.
+5. Run `npm start`.
+6. Open `http://localhost:3000`.
 
-## Projects
-
-### 1. AquaSentinel AI
-Completed team project. Shreya's contribution: frontend/UI lead with some backend contribution.
-
-GitHub: https://github.com/Shreyasri2006/AquaSentinel-AI
-
-### 2. Trip Crafter
-Currently in development.
-
-GitHub: https://github.com/Shreyasri2006/trip-crafter
-
-### 3. AI-Based Learning Platform
-Currently in development. No project link has been added until one is provided.
-
-## Run locally
-
-No build tools are required.
-
-1. Open `index.html` in a browser.
-2. For the best browser voice-recognition experience, use a modern Chromium-based browser.
-
-## Add future images
-
-- Replace `assets/aquasentinel.png` only if you want to update the project screenshot.
-- Add hackathon photos later inside an `assets/hackathons/` folder.
-- Add certificate images later inside an `assets/certificates/` folder.
-
-## AI note
-
-The included assistant is a local JavaScript prototype using Shreya's confirmed portfolio information. It is NOT connected to an external LLM yet. The next phase can connect it to a secure backend/LLM and add real text-to-speech output.
-
-## Social links
-
-GitHub: https://github.com/Shreyasri2006  
-LinkedIn: https://www.linkedin.com/in/shreya-sri-844198314  
-Email: shreyasri2613@gmail.com
+NEVER upload `.env` or your API key to GitHub.
