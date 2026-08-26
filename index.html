@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shreya Sri — AI & Data Science portfolio, presented as an interactive game-like journey.">
+  <meta name="theme-color" content="#070914">
+  <title>Shreya Sri | Mission: Build Something Amazing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="fxCanvas" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Shreya home"><span>✦</span> SHREYA.SRI</a>
+
+    <div class="hud">
+      <div class="level-hud" aria-label="Current portfolio level"><span>LVL</span><strong id="levelHud">01</strong></div>
+      <div class="xp-wrap"><span>XP</span><div class="xp-track"><i id="xpBar"></i></div><strong id="xpText">0 / 100</strong></div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Toggle sound effects">🔊</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+    </div>
+
+    <nav id="navMenu" aria-label="Portfolio navigation">
+      <a href="#about" data-nav-level="about">About</a>
+      <a href="#skills" data-nav-level="skills">Skills</a>
+      <a href="#projects" data-nav-level="projects">Projects</a>
+      <a href="#journey" data-nav-level="journey">Journey</a>
+      <a href="#contact" data-nav-level="contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad" id="home">
+      <div class="hero-copy reveal">
+        <div class="quest-chip"><span class="pulse-dot"></span> QUEST 01 · MEET THE BUILDER</div>
+        <p class="eyebrow">AI × DATA × CODE</p>
+        <h1>Hi, I'm <span>Shreya.</span></h1>
+        <p class="hero-lead">I turn curious ideas into practical digital experiences with AI, data and code.</p>
+        <p class="hero-text">You're not entering a boring resume. This is a small interactive world built to show what I learn, build and explore.</p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#about">Enter Level 01 <span>→</span></a>
+          <button class="btn voice-tour" id="startTour">🎙 Listen to my portfolio</button>
+        </div>
+
+        <div class="hero-stats">
+          <span><b>01</b> completed project</span>
+          <span><b>02</b> projects in development</span>
+          <span><b>04</b> interactive rooms</span>
+        </div>
+      </div>
+
+      <div class="hero-world reveal">
+        <img class="profile-constellation" src="assets/profile-constellation.svg" alt="Abstract AI and data constellation graphic representing Shreya's profile">
+
+        <div class="portal">
+          <div class="portal-ring ring-a"></div>
+          <div class="portal-ring ring-b"></div>
+          <div class="portal-core"><span>SS</span></div>
+          <div class="floating-token token-a">AI</div>
+          <div class="floating-token token-b">DATA</div>
+          <div class="floating-token token-c">CODE</div>
+          <div class="lightning l1">ϟ</div>
+          <div class="lightning l2">ϟ</div>
+          <div class="lightning l3">ϟ</div>
+        </div>
+
+        <div class="mini-card">
+          <span>PLAYER PROFILE</span>
+          <strong>SHREYA SRI</strong>
+          <small>AI & DATA SCIENCE · BUILDER MODE</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad about level-section" id="about" data-level="about">
+      <div class="section-title reveal">
+        <span>LEVEL 01</span>
+        <h2>Meet the <em>player.</em></h2>
+        <p>Walk through the portfolio world. Click objects, uncover the story, and unlock the next room.</p>
+      </div>
+
+      <div class="about-grid">
+        <article class="story-card reveal">
+          <div class="card-badge">PLAYER PROFILE</div>
+          <h3>Curious mind. Practical builder.</h3>
+          <p>I'm Shreya Sri, an Artificial Intelligence and Data Science undergraduate at East Point College of Engineering and Technology.</p>
+          <p>My journey mixes classroom learning with hands-on projects, hackathon experiences and experiments with AI-assisted development. I enjoy seeing an idea become something people can actually interact with.</p>
+          <p>My current focus is growing across AI, data, software development and user-friendly digital experiences.</p>
+
+          <div class="profile-signals" aria-label="Profile highlights">
+            <span><i>01</i> AI & Data Science</span>
+            <span><i>02</i> Frontend + UI</span>
+            <span><i>03</i> Project Builder</span>
+          </div>
+
+          <button class="inline-listen" data-tour="about">▶ Explain this section</button>
+        </article>
+
+        <aside class="mission-board reveal">
+          <div class="mission-head"><span>MISSION BOARD</span><b id="questCount">0 / 5</b></div>
+          <div class="quest" data-quest="about"><i>01</i><span>Discover the player</span><b>+10 XP</b></div>
+          <div class="quest" data-quest="skills"><i>02</i><span>Scan the skill tree</span><b>+10 XP</b></div>
+          <div class="quest" data-quest="projects"><i>03</i><span>Inspect the builds</span><b>+20 XP</b></div>
+          <div class="quest" data-quest="journey"><i>04</i><span>Unlock the journey</span><b>+10 XP</b></div>
+          <div class="quest" data-quest="contact"><i>05</i><span>Open the final mission</span><b>+10 XP</b></div>
+        </aside>
+      </div>
+
+      <div class="level-exit reveal">
+        <div class="level-exit-art art-profile" aria-hidden="true"><span>SS</span><i></i><b>?</b></div>
+        <div><small>INTERACTIVE ROOM</small><h3>Builder's Office</h3><p>Explore three glowing artifacts to unlock the Skill Lab.</p></p></div>
+        <button class="btn gate-btn" data-gate="about">Play & unlock Level 02 <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="section-pad level-section" id="skills" data-level="skills">
+      <div class="level-lock" data-lock="skills"><div><span>LOCKED LEVEL 02</span><strong>Explore the Builder's Office first.</strong><button data-open-prev="about">Enter room</button></div></div>
+
+      <div class="section-title reveal">
+        <span>LEVEL 02</span>
+        <h2>My skill <em>tree.</em></h2>
+        <p>Hover a node. Watch the stack wake up.</p>
+      </div>
+
+      <div class="skill-tree">
+        <div class="skill-node reveal"><span class="node-icon">⌘</span><h3>Development</h3><p>HTML · CSS · JavaScript · Python</p><div class="node-line"></div></div>
+        <div class="skill-node reveal"><span class="node-icon">◈</span><h3>Data</h3><p>SQL · MongoDB · R Programming</p><div class="node-line"></div></div>
+        <div class="skill-node reveal"><span class="node-icon">λ</span><h3>Foundations</h3><p>C · C++ · Java · Excel</p><div class="node-line"></div></div>
+        <div class="skill-node special reveal"><span class="node-icon">✦</span><h3>AI Exploration</h3><p>AI tools · intelligent products · learning systems</p><div class="node-line"></div></div>
+      </div>
+
+      <div class="skill-spectrum reveal" aria-label="Interactive skill spectrum graphic">
+        <div class="spectrum-copy"><small>ACTIVE STACK</small><strong>DESIGN → BUILD → DATA → AI</strong></div>
+        <div class="spectrum-line"><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="level-exit reveal">
+        <div class="level-exit-art art-skills" aria-hidden="true"><span>&lt;/&gt;</span><i></i><b>+</b></div>
+        <div><small>INTERACTIVE ROOM</small><h3>Skill Lab</h3><p>Explore the technical artifacts to unlock the Project Studio.</p></p></div>
+        <button class="btn gate-btn" data-gate="skills">Play & unlock Level 03 <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="section-pad projects level-section" id="projects" data-level="projects">
+      <div class="level-lock" data-lock="projects"><div><span>LOCKED LEVEL 03</span><strong>Explore the Skill Lab first.</strong><button data-open-prev="skills">Enter room</button></div></div>
+
+      <div class="section-title reveal">
+        <span>LEVEL 03</span>
+        <h2>Builds I've <em>unlocked.</em></h2>
+        <p>Every project is another playable experiment.</p>
+      </div>
+
+      <article class="project-card featured reveal">
+        <div class="project-art">
+          <img src="assets/aquasentinel.png" alt="AquaSentinel AI project interface">
+          <div class="project-glitch">01</div>
+          <div class="project-scan" aria-hidden="true"></div>
+        </div>
+        <div class="project-info">
+          <div class="tag">COMPLETED · TEAM BUILD</div>
+          <h3>AquaSentinel AI</h3>
+          <p>AI-powered waterborne disease awareness platform designed to turn an important topic into an intuitive digital experience.</p>
+          <div class="detail-grid"><span><b>ROLE</b>Frontend / UI Lead + backend contribution</span><span><b>STACK</b>HTML · CSS · JavaScript · Python</span></div>
+          <a class="project-link" href="https://github.com/Shreyasri2006/AquaSentinel-AI" target="_blank" rel="noopener">Open build ↗</a>
+        </div>
+      </article>
+
+      <article class="project-row reveal"><span class="level-no">02</span><div><div class="tag">IN DEVELOPMENT</div><h3>Trip Crafter</h3><p>A travel-focused project built around practical, user-friendly digital experiences.</p><a class="project-link" href="https://github.com/Shreyasri2006/trip-crafter" target="_blank" rel="noopener">View repository ↗</a></div><span class="status-orb">BUILDING</span></article>
+      <article class="project-row reveal"><span class="level-no">03</span><div><div class="tag">IN DEVELOPMENT</div><h3>AI-Based Learning Platform</h3><p>An upcoming exploration of smarter and more personalized learning with artificial intelligence.</p><span class="project-link muted-link">Details unlocking soon</span></div><span class="status-orb">LOCKED</span></article>
+
+      <div class="level-exit reveal">
+        <div class="level-exit-art art-projects" aria-hidden="true"><span>01</span><i></i><b>✓</b></div>
+        <div><small>INTERACTIVE ROOM</small><h3>Project Studio</h3><p>Inspect the builds to unlock the Journey Vault.</p></p></div>
+        <button class="btn gate-btn" data-gate="projects">Play & unlock Level 04 <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="section-pad journey level-section" id="journey" data-level="journey">
+      <div class="level-lock" data-lock="journey"><div><span>LOCKED LEVEL 04</span><strong>Explore the Project Studio first.</strong><button data-open-prev="projects">Enter room</button></div></div>
+
+      <div class="section-title reveal">
+        <span>LEVEL 04</span>
+        <h2>The <em>journey.</em></h2>
+        <p>Memories, milestones and the next things waiting to be unlocked.</p>
+      </div>
+
+      <div class="journey-grid">
+        <article class="memory-card reveal"><span class="big-icon">🏆</span><div class="tag">HACKATHON LOG</div><h3>Build under pressure.</h3><p>Hackathon experiences, team moments and project memories live here as the journey grows.</p><div class="locked-box"><span class="memory-pulse"></span> MEMORY SLOT · READY TO UNLOCK</div></article>
+        <article class="memory-card reveal"><span class="big-icon">✧</span><div class="tag">CERTIFICATION VAULT</div><h3>Learn beyond class.</h3><p>Certifications and learning milestones will be added here as the portfolio evolves.</p><div class="locked-box"><span class="memory-pulse cyan"></span> VAULT SLOT · READY TO UNLOCK</div></article>
+      </div>
+
+      <div class="journey-path reveal" aria-label="Learning journey graphic">
+        <div><span>LEARN</span><i></i></div><b>→</b><div><span>BUILD</span><i></i></div><b>→</b><div><span>TEST</span><i></i></div><b>→</b><div><span>EVOLVE</span><i></i></div>
+      </div>
+
+      <div class="level-exit reveal">
+        <div class="level-exit-art art-journey" aria-hidden="true"><span>✦</span><i></i><b>∞</b></div>
+        <div><small>INTERACTIVE ROOM</small><h3>Journey Vault</h3><p>Discover the final three artifacts to open the collaboration portal.</p></p></div>
+        <button class="btn gate-btn" data-gate="journey">Play & unlock Final Mission <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="section-pad narrator-section" id="narrator">
+      <div class="narrator-card reveal">
+        <div class="ai-orb"><span>✦</span></div>
+        <div>
+          <div class="tag">PORTFOLIO NARRATOR · 1.12×</div>
+          <h2>Read it. <em>Hear it.</em> Explore it.</h2>
+          <p>The narrator now moves a little faster than normal speech and stops automatically when the final mission is finished — no endless replay loop.</p>
+          <div class="narrator-controls"><button class="btn primary" id="playPause">▶ Start narration</button><button class="btn secondary" id="stopNarration">■ Stop</button></div>
+        </div>
+      </div>
+      <div class="transcript reveal"><div class="transcript-head"><span>LIVE TRANSCRIPT</span><span id="narrationStatus">READY</span></div><p id="transcriptText">Press “Start narration” and the portfolio will explain itself while you read along.</p></div>
+    </section>
+
+    <section class="section-pad contact level-section" id="contact" data-level="contact">
+      <div class="level-lock" data-lock="contact"><div><span>FINAL MISSION LOCKED</span><strong>Explore the Journey Vault first.</strong><button data-open-prev="journey">Enter final room</button></div></div>
+
+      <div class="contact-box reveal">
+        <img src="assets/final-mission.svg" class="final-mission-art" alt="Abstract glowing final mission badge">
+        <div class="tag">FINAL MISSION</div>
+        <h2>Want to build the <em>next level?</em></h2>
+        <p>For a project, collaboration or opportunity, let's connect.</p>
+        <div class="contact-actions"><a class="btn primary" href="mailto:shreyasri2613@gmail.com">Send a message ↗</a><a class="btn secondary" href="https://github.com/Shreyasri2006" target="_blank" rel="noopener">GitHub ↗</a><a class="btn secondary" href="https://www.linkedin.com/in/shreya-sri-844198314" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive resume rooms -->
+  <div class="checkpoint-overlay" id="checkpointOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkpointTitle">
+    <div class="checkpoint-shell resume-room-shell">
+      <button class="checkpoint-close" id="checkpointClose" aria-label="Close interactive room">×</button>
+      <div class="resume-room" id="checkpointVisual" aria-label="Interactive portfolio room">
+        <div class="room-grid"></div>
+        <div class="room-window"><i></i><i></i><i></i></div>
+        <div class="room-floor"></div>
+        <div class="room-avatar" id="roomAvatar"><span>SS</span></div>
+        <div class="room-caption"><small id="roomProgress">0 / 3 ARTIFACTS</small><strong id="roomHint">Click glowing objects to explore</strong></div>
+        <div class="room-objects" id="checkpointChoices"></div>
+      </div>
+      <div class="checkpoint-copy resume-room-copy">
+        <div class="tag" id="checkpointLabel">INTERACTIVE RESUME · ROOM 01</div>
+        <h2 id="checkpointTitle">The Builder's Office</h2>
+        <p id="checkpointQuestion">Walk through the room and discover the portfolio artifacts.</p>
+        <div class="artifact-panel" id="checkpointFeedback" aria-live="polite">Click an object. Its story will appear here.</div>
+        <div class="room-progress"><span></span><i id="roomProgressBar"></i></div>
+        <p class="room-note">No quizzes. No forms. Just explore the room and uncover the resume.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Level transition / success pop -->
+  <div class="level-burst" id="levelBurst" aria-hidden="true">
+    <div class="burst-rays"></div>
+    <img id="burstImage" src="assets/level-unlocked.svg" alt="">
+    <small id="burstEyebrow">ROOM CLEARED</small>
+    <strong id="burstTitle">LEVEL 02 UNLOCKED</strong>
+    <p id="burstText">Skill Tree is ready.</p>
+  </div>
+
+  <button class="floating-ai" id="openAi" aria-label="Open Shreya AI">✦ <span>Ask my AI</span></button>
+
+  <div class="ai-overlay" id="aiOverlay" aria-hidden="true">
+    <div class="ai-panel">
+      <button class="close-ai" id="closeAi" aria-label="Close AI">×</button>
+      <div class="ai-header"><div class="ai-orb small"><span>✦</span></div><div><b>SHREYA'S AI</b><small>Portfolio guide · text + voice</small></div><i></i></div>
+      <div class="ai-messages" id="aiMessages"><div class="message ai"><small>GUIDE</small>Hey! Ask me about Shreya, her skills, projects, education or journey. I can answer in text and read the answer aloud.</div></div>
+      <div class="quick-asks"><button data-question="Give me a quick tour of Shreya's portfolio.">Quick tour</button><button data-question="Tell me about Shreya's projects.">Projects</button><button data-question="What skills does Shreya have?">Skills</button></div>
+      <div class="ai-input"><button id="voiceButton" class="mic" title="Speak your question">🎙</button><input id="aiInput" placeholder="Ask about the portfolio..." autocomplete="off"><button id="sendButton" class="send">→</button></div>
+      <div class="voice-read"><label><input type="checkbox" id="autoSpeak" checked> Read AI answers aloud</label><button id="stopVoice">Stop voice</button></div>
+      <p class="ai-note">Voice input uses your browser. The assistant has a built-in portfolio guide and can use the AI backend when available.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <footer><span>© 2026 SHREYA SRI</span><span>AI · DATA · CODE · CURIOSITY</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>

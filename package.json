@@ -1,0 +1,19 @@
+{
+  "name": "shreya-sri-interactive-ai-portfolio",
+  "version": "5.0.0",
+  "private": false,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "openai": "^6.0.0"
+  },
+  "description": "Interactive point-and-click resume portfolio with game music, voice narration and optional OpenAI backend.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
