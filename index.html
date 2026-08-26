@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Shreya Sri — AI & Data Science portfolio, presented as an interactive game-like journey.">
+  <meta name="theme-color" content="#070914">
   <title>Shreya Sri | Mission: Build Something Amazing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,13 +18,20 @@
 
   <header class="topbar">
     <a class="brand" href="#home" aria-label="Shreya home"><span>✦</span> SHREYA.SRI</a>
+
     <div class="hud">
+      <div class="level-hud" aria-label="Current portfolio level"><span>LVL</span><strong id="levelHud">01</strong></div>
       <div class="xp-wrap"><span>XP</span><div class="xp-track"><i id="xpBar"></i></div><strong id="xpText">0 / 100</strong></div>
       <button class="sound-toggle" id="soundToggle" aria-label="Toggle sound effects">🔊</button>
       <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
     </div>
-    <nav id="navMenu">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+
+    <nav id="navMenu" aria-label="Portfolio navigation">
+      <a href="#about" data-nav-level="about">About</a>
+      <a href="#skills" data-nav-level="skills">Skills</a>
+      <a href="#projects" data-nav-level="projects">Projects</a>
+      <a href="#journey" data-nav-level="journey">Journey</a>
+      <a href="#contact" data-nav-level="contact">Contact</a>
     </nav>
   </header>
 
@@ -35,27 +43,49 @@
         <h1>Hi, I'm <span>Shreya.</span></h1>
         <p class="hero-lead">I turn curious ideas into practical digital experiences with AI, data and code.</p>
         <p class="hero-text">You're not entering a boring resume. This is a small interactive world built to show what I learn, build and explore.</p>
+
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">Start the journey <span>→</span></a>
+          <a class="btn primary" href="#about">Enter Level 01 <span>→</span></a>
           <button class="btn voice-tour" id="startTour">🎙 Listen to my portfolio</button>
         </div>
+
         <div class="hero-stats">
-          <span><b>01</b> completed project</span><span><b>02</b> projects in development</span><span><b>∞</b> ideas to build</span>
+          <span><b>01</b> completed project</span>
+          <span><b>02</b> projects in development</span>
+          <span><b>04</b> playable checkpoints</span>
         </div>
       </div>
 
       <div class="hero-world reveal">
+        <img class="profile-constellation" src="assets/profile-constellation.svg" alt="Abstract AI and data constellation graphic representing Shreya's profile">
+
         <div class="portal">
-          <div class="portal-ring ring-a"></div><div class="portal-ring ring-b"></div><div class="portal-core"><span>SS</span></div>
-          <div class="floating-token token-a">AI</div><div class="floating-token token-b">DATA</div><div class="floating-token token-c">CODE</div>
-          <div class="lightning l1">ϟ</div><div class="lightning l2">ϟ</div><div class="lightning l3">ϟ</div>
+          <div class="portal-ring ring-a"></div>
+          <div class="portal-ring ring-b"></div>
+          <div class="portal-core"><span>SS</span></div>
+          <div class="floating-token token-a">AI</div>
+          <div class="floating-token token-b">DATA</div>
+          <div class="floating-token token-c">CODE</div>
+          <div class="lightning l1">ϟ</div>
+          <div class="lightning l2">ϟ</div>
+          <div class="lightning l3">ϟ</div>
         </div>
-        <div class="mini-card"><span>PLAYER</span><strong>SHREYA SRI</strong><small>AI & DATA SCIENCE</small></div>
+
+        <div class="mini-card">
+          <span>PLAYER PROFILE</span>
+          <strong>SHREYA SRI</strong>
+          <small>AI & DATA SCIENCE · BUILDER MODE</small>
+        </div>
       </div>
     </section>
 
-    <section class="section-pad about" id="about">
-      <div class="section-title reveal"><span>LEVEL 01</span><h2>Meet the <em>player.</em></h2><p>Read it, or let me explain it out loud.</p></div>
+    <section class="section-pad about level-section" id="about" data-level="about">
+      <div class="section-title reveal">
+        <span>LEVEL 01</span>
+        <h2>Meet the <em>player.</em></h2>
+        <p>Discover the person behind the projects, then clear a quick profile checkpoint.</p>
+      </div>
+
       <div class="about-grid">
         <article class="story-card reveal">
           <div class="card-badge">PLAYER PROFILE</div>
@@ -63,66 +93,174 @@
           <p>I'm Shreya Sri, an Artificial Intelligence and Data Science undergraduate at East Point College of Engineering and Technology.</p>
           <p>My journey mixes classroom learning with hands-on projects, hackathon experiences and experiments with AI-assisted development. I enjoy seeing an idea become something people can actually interact with.</p>
           <p>My current focus is growing across AI, data, software development and user-friendly digital experiences.</p>
+
+          <div class="profile-signals" aria-label="Profile highlights">
+            <span><i>01</i> AI & Data Science</span>
+            <span><i>02</i> Frontend + UI</span>
+            <span><i>03</i> Project Builder</span>
+          </div>
+
           <button class="inline-listen" data-tour="about">▶ Explain this section</button>
         </article>
+
         <aside class="mission-board reveal">
           <div class="mission-head"><span>MISSION BOARD</span><b id="questCount">0 / 5</b></div>
           <div class="quest" data-quest="about"><i>01</i><span>Discover the player</span><b>+10 XP</b></div>
           <div class="quest" data-quest="skills"><i>02</i><span>Scan the skill tree</span><b>+10 XP</b></div>
           <div class="quest" data-quest="projects"><i>03</i><span>Inspect the builds</span><b>+20 XP</b></div>
           <div class="quest" data-quest="journey"><i>04</i><span>Unlock the journey</span><b>+10 XP</b></div>
-          <div class="quest" data-quest="contact"><i>05</i><span>Open the next mission</span><b>+10 XP</b></div>
+          <div class="quest" data-quest="contact"><i>05</i><span>Open the final mission</span><b>+10 XP</b></div>
         </aside>
+      </div>
+
+      <div class="level-exit reveal">
+        <div class="level-exit-art art-profile" aria-hidden="true"><span>SS</span><i></i><b>?</b></div>
+        <div><small>LEVEL CHECKPOINT</small><h3>Profile Pulse</h3><p>One quick challenge unlocks the Skill Tree.</p></div>
+        <button class="btn gate-btn" data-gate="about">Play & unlock Level 02 <span>→</span></button>
       </div>
     </section>
 
-    <section class="section-pad" id="skills">
-      <div class="section-title reveal"><span>LEVEL 02</span><h2>My skill <em>tree.</em></h2><p>Hover a node. Watch it wake up.</p></div>
+    <section class="section-pad level-section" id="skills" data-level="skills">
+      <div class="level-lock" data-lock="skills"><div><span>LOCKED LEVEL 02</span><strong>Clear the Profile Pulse checkpoint first.</strong><button data-open-prev="about">Play checkpoint</button></div></div>
+
+      <div class="section-title reveal">
+        <span>LEVEL 02</span>
+        <h2>My skill <em>tree.</em></h2>
+        <p>Hover a node. Watch the stack wake up.</p>
+      </div>
+
       <div class="skill-tree">
         <div class="skill-node reveal"><span class="node-icon">⌘</span><h3>Development</h3><p>HTML · CSS · JavaScript · Python</p><div class="node-line"></div></div>
         <div class="skill-node reveal"><span class="node-icon">◈</span><h3>Data</h3><p>SQL · MongoDB · R Programming</p><div class="node-line"></div></div>
         <div class="skill-node reveal"><span class="node-icon">λ</span><h3>Foundations</h3><p>C · C++ · Java · Excel</p><div class="node-line"></div></div>
         <div class="skill-node special reveal"><span class="node-icon">✦</span><h3>AI Exploration</h3><p>AI tools · intelligent products · learning systems</p><div class="node-line"></div></div>
       </div>
+
+      <div class="skill-spectrum reveal" aria-label="Interactive skill spectrum graphic">
+        <div class="spectrum-copy"><small>ACTIVE STACK</small><strong>DESIGN → BUILD → DATA → AI</strong></div>
+        <div class="spectrum-line"><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="level-exit reveal">
+        <div class="level-exit-art art-skills" aria-hidden="true"><span>&lt;/&gt;</span><i></i><b>+</b></div>
+        <div><small>LEVEL CHECKPOINT</small><h3>Stack Sync</h3><p>Pick the combination that matches Shreya's frontend toolkit.</p></div>
+        <button class="btn gate-btn" data-gate="skills">Play & unlock Level 03 <span>→</span></button>
+      </div>
     </section>
 
-    <section class="section-pad projects" id="projects">
-      <div class="section-title reveal"><span>LEVEL 03</span><h2>Builds I've <em>unlocked.</em></h2><p>Every project is another playable experiment.</p></div>
+    <section class="section-pad projects level-section" id="projects" data-level="projects">
+      <div class="level-lock" data-lock="projects"><div><span>LOCKED LEVEL 03</span><strong>Clear the Stack Sync checkpoint first.</strong><button data-open-prev="skills">Play checkpoint</button></div></div>
+
+      <div class="section-title reveal">
+        <span>LEVEL 03</span>
+        <h2>Builds I've <em>unlocked.</em></h2>
+        <p>Every project is another playable experiment.</p>
+      </div>
+
       <article class="project-card featured reveal">
-        <div class="project-art"><img src="assets/aquasentinel.png" alt="AquaSentinel AI project"><div class="project-glitch">01</div></div>
+        <div class="project-art">
+          <img src="assets/aquasentinel.png" alt="AquaSentinel AI project interface">
+          <div class="project-glitch">01</div>
+          <div class="project-scan" aria-hidden="true"></div>
+        </div>
         <div class="project-info">
-          <div class="tag">COMPLETED · TEAM BUILD</div><h3>AquaSentinel AI</h3>
+          <div class="tag">COMPLETED · TEAM BUILD</div>
+          <h3>AquaSentinel AI</h3>
           <p>AI-powered waterborne disease awareness platform designed to turn an important topic into an intuitive digital experience.</p>
           <div class="detail-grid"><span><b>ROLE</b>Frontend / UI Lead + backend contribution</span><span><b>STACK</b>HTML · CSS · JavaScript · Python</span></div>
           <a class="project-link" href="https://github.com/Shreyasri2006/AquaSentinel-AI" target="_blank" rel="noopener">Open build ↗</a>
         </div>
       </article>
+
       <article class="project-row reveal"><span class="level-no">02</span><div><div class="tag">IN DEVELOPMENT</div><h3>Trip Crafter</h3><p>A travel-focused project built around practical, user-friendly digital experiences.</p><a class="project-link" href="https://github.com/Shreyasri2006/trip-crafter" target="_blank" rel="noopener">View repository ↗</a></div><span class="status-orb">BUILDING</span></article>
       <article class="project-row reveal"><span class="level-no">03</span><div><div class="tag">IN DEVELOPMENT</div><h3>AI-Based Learning Platform</h3><p>An upcoming exploration of smarter and more personalized learning with artificial intelligence.</p><span class="project-link muted-link">Details unlocking soon</span></div><span class="status-orb">LOCKED</span></article>
+
+      <div class="level-exit reveal">
+        <div class="level-exit-art art-projects" aria-hidden="true"><span>01</span><i></i><b>✓</b></div>
+        <div><small>LEVEL CHECKPOINT</small><h3>Build Scanner</h3><p>Identify the completed team project to open the Journey Vault.</p></div>
+        <button class="btn gate-btn" data-gate="projects">Play & unlock Level 04 <span>→</span></button>
+      </div>
     </section>
 
-    <section class="section-pad journey" id="journey">
-      <div class="section-title reveal"><span>LEVEL 04</span><h2>The <em>journey.</em></h2><p>More memories and milestones can be added as the game grows.</p></div>
+    <section class="section-pad journey level-section" id="journey" data-level="journey">
+      <div class="level-lock" data-lock="journey"><div><span>LOCKED LEVEL 04</span><strong>Clear the Build Scanner checkpoint first.</strong><button data-open-prev="projects">Play checkpoint</button></div></div>
+
+      <div class="section-title reveal">
+        <span>LEVEL 04</span>
+        <h2>The <em>journey.</em></h2>
+        <p>Memories, milestones and the next things waiting to be unlocked.</p>
+      </div>
+
       <div class="journey-grid">
-        <article class="memory-card reveal"><span class="big-icon">🏆</span><div class="tag">HACKATHON LOG</div><h3>Build under pressure.</h3><p>Hackathon experiences, team moments and project memories will live here.</p><div class="locked-box">✦ MEMORY SLOT · READY TO UNLOCK</div></article>
-        <article class="memory-card reveal"><span class="big-icon">✧</span><div class="tag">CERTIFICATION VAULT</div><h3>Learn beyond class.</h3><p>Certifications and learning milestones will be added here as the portfolio evolves.</p><div class="locked-box">✦ VAULT SLOT · READY TO UNLOCK</div></article>
+        <article class="memory-card reveal"><span class="big-icon">🏆</span><div class="tag">HACKATHON LOG</div><h3>Build under pressure.</h3><p>Hackathon experiences, team moments and project memories live here as the journey grows.</p><div class="locked-box"><span class="memory-pulse"></span> MEMORY SLOT · READY TO UNLOCK</div></article>
+        <article class="memory-card reveal"><span class="big-icon">✧</span><div class="tag">CERTIFICATION VAULT</div><h3>Learn beyond class.</h3><p>Certifications and learning milestones will be added here as the portfolio evolves.</p><div class="locked-box"><span class="memory-pulse cyan"></span> VAULT SLOT · READY TO UNLOCK</div></article>
+      </div>
+
+      <div class="journey-path reveal" aria-label="Learning journey graphic">
+        <div><span>LEARN</span><i></i></div><b>→</b><div><span>BUILD</span><i></i></div><b>→</b><div><span>TEST</span><i></i></div><b>→</b><div><span>EVOLVE</span><i></i></div>
+      </div>
+
+      <div class="level-exit reveal">
+        <div class="level-exit-art art-journey" aria-hidden="true"><span>✦</span><i></i><b>∞</b></div>
+        <div><small>FINAL CHECKPOINT</small><h3>Journey Link</h3><p>Complete one last profile challenge to unlock the Final Mission.</p></div>
+        <button class="btn gate-btn" data-gate="journey">Play & unlock Final Mission <span>→</span></button>
       </div>
     </section>
 
     <section class="section-pad narrator-section" id="narrator">
       <div class="narrator-card reveal">
         <div class="ai-orb"><span>✦</span></div>
-        <div><div class="tag">PORTFOLIO NARRATOR</div><h2>Read it. <em>Hear it.</em> Explore it.</h2>
-        <p>I can guide you through the portfolio section by section. The text stays visible while the voice explains it.</p>
-        <div class="narrator-controls"><button class="btn primary" id="playPause">▶ Start narration</button><button class="btn secondary" id="stopNarration">■ Stop</button></div></div>
+        <div>
+          <div class="tag">PORTFOLIO NARRATOR · 1.12×</div>
+          <h2>Read it. <em>Hear it.</em> Explore it.</h2>
+          <p>The narrator now moves a little faster than normal speech and stops automatically when the final mission is finished — no endless replay loop.</p>
+          <div class="narrator-controls"><button class="btn primary" id="playPause">▶ Start narration</button><button class="btn secondary" id="stopNarration">■ Stop</button></div>
+        </div>
       </div>
       <div class="transcript reveal"><div class="transcript-head"><span>LIVE TRANSCRIPT</span><span id="narrationStatus">READY</span></div><p id="transcriptText">Press “Start narration” and the portfolio will explain itself while you read along.</p></div>
     </section>
 
-    <section class="section-pad contact" id="contact">
-      <div class="contact-box reveal"><div class="tag">FINAL MISSION</div><h2>Want to build the <em>next level?</em></h2><p>For a project, collaboration or opportunity, let's connect.</p><div class="contact-actions"><a class="btn primary" href="mailto:shreyasri2613@gmail.com">Send a message ↗</a><a class="btn secondary" href="https://github.com/Shreyasri2006" target="_blank" rel="noopener">GitHub ↗</a><a class="btn secondary" href="https://www.linkedin.com/in/shreya-sri-844198314" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+    <section class="section-pad contact level-section" id="contact" data-level="contact">
+      <div class="level-lock" data-lock="contact"><div><span>FINAL MISSION LOCKED</span><strong>Clear the Journey Link checkpoint first.</strong><button data-open-prev="journey">Play final checkpoint</button></div></div>
+
+      <div class="contact-box reveal">
+        <img src="assets/final-mission.svg" class="final-mission-art" alt="Abstract glowing final mission badge">
+        <div class="tag">FINAL MISSION</div>
+        <h2>Want to build the <em>next level?</em></h2>
+        <p>For a project, collaboration or opportunity, let's connect.</p>
+        <div class="contact-actions"><a class="btn primary" href="mailto:shreyasri2613@gmail.com">Send a message ↗</a><a class="btn secondary" href="https://github.com/Shreyasri2006" target="_blank" rel="noopener">GitHub ↗</a><a class="btn secondary" href="https://www.linkedin.com/in/shreya-sri-844198314" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+      </div>
     </section>
   </main>
+
+  <!-- Level checkpoint mini-game -->
+  <div class="checkpoint-overlay" id="checkpointOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkpointTitle">
+    <div class="checkpoint-shell">
+      <button class="checkpoint-close" id="checkpointClose" aria-label="Close checkpoint">×</button>
+      <div class="checkpoint-visual" id="checkpointVisual" aria-hidden="true">
+        <div class="checkpoint-orbit orbit-one"></div>
+        <div class="checkpoint-orbit orbit-two"></div>
+        <div class="checkpoint-core" id="checkpointCore">01</div>
+        <span class="checkpoint-spark s1">✦</span><span class="checkpoint-spark s2">✧</span><span class="checkpoint-spark s3">+</span>
+      </div>
+      <div class="checkpoint-copy">
+        <div class="tag" id="checkpointLabel">LEVEL CHECKPOINT</div>
+        <h2 id="checkpointTitle">Profile Pulse</h2>
+        <p id="checkpointQuestion">Question loading…</p>
+        <div class="checkpoint-choices" id="checkpointChoices"></div>
+        <p class="checkpoint-feedback" id="checkpointFeedback" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Level transition / success pop -->
+  <div class="level-burst" id="levelBurst" aria-hidden="true">
+    <div class="burst-rays"></div>
+    <img id="burstImage" src="assets/level-unlocked.svg" alt="">
+    <small id="burstEyebrow">CHECKPOINT CLEARED</small>
+    <strong id="burstTitle">LEVEL 02 UNLOCKED</strong>
+    <p id="burstText">Skill Tree is ready.</p>
+  </div>
 
   <button class="floating-ai" id="openAi" aria-label="Open Shreya AI">✦ <span>Ask my AI</span></button>
 
