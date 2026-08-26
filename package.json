@@ -1,7 +1,7 @@
 {
-  "name": "shreya-portfolio-game",
+  "name": "shreya-sri-interactive-ai-portfolio",
   "version": "3.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js"
@@ -10,5 +10,10 @@
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "openai": "^6.0.0"
+  },
+  "description": "Interactive, game-style AI portfolio with voice narration and optional OpenAI backend.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
   }
 }

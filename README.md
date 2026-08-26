@@ -1,41 +1,89 @@
-# Shreya Sri — Interactive AI Portfolio
+# Shreya Sri — Interactive AI Portfolio 🎮✨
 
-A redesigned portfolio that feels like a calm, playful mini-game rather than a traditional resume.
+A creative, game-style portfolio for Shreya Sri with voice narration, browser voice input, animated effects, an optional AI assistant, and a built-in offline fallback.
 
-## Included
+## ✨ Features
 
-- Medium, readable typography (no oversized wall-of-text headings).
-- Voice portfolio narrator: the visitor can read the transcript while the browser reads each section aloud.
-- Voice input for the AI assistant using the browser Speech Recognition API.
-- AI answers are also read aloud when "Read AI answers aloud" is enabled.
-- Game-style XP bar, quests, levels, unlockable sections and small interaction sounds.
-- Animated portal, floating tokens, lightning flashes, particles, cursor glow and hover effects.
-- Reduced-motion support for accessibility.
-- Responsive layout for desktop, tablet and mobile.
-- Express backend with OpenAI Responses API integration.
-- Existing AquaSentinel project image retained from the supplied ZIP.
+- 🎙️ Read + listen portfolio narrator
+- 🗣️ Browser speech input for asking questions
+- 🤖 Optional OpenAI-powered portfolio assistant
+- 🧠 Local assistant fallback when no backend/API is available
+- ⚡ Animated particles, lightning, glowing UI and floating tech effects
+- 🎮 XP, quests and game-style navigation
+- 📱 Responsive design
+- ♿ Reduced-motion support
+- 🔐 API key stays on the server and is ignored by Git via `.gitignore`
 
-## Run locally
+## 🚀 Run locally with the backend
 
-1. Install Node.js 18+.
-2. Open a terminal in this folder.
-3. Run `npm install`.
-4. Copy `.env.example` to `.env`.
-5. Put your OpenAI API key in `.env`.
-6. Run `npm start`.
-7. Open `http://localhost:3000`.
+Requirements: Node.js 18+
 
-The frontend still works without an API key; the scripted portfolio narrator is browser-based. The AI chat requires the backend API key.
+```bash
+npm install
+npm start
+```
 
-## Voice notes
+Open:
 
-Chrome/Edge provide the best browser support for speech recognition. Speech synthesis is handled by the browser, so the exact voice depends on the visitor's operating system/browser.
+```text
+http://localhost:3000
+```
 
-## Files
+### Optional OpenAI assistant
 
-- `index.html` — frontend structure/content
-- `style.css` — visual system, animations and responsive design
-- `script.js` — game effects, narrator, speech controls and AI chat UI
-- `server.js` — Express backend and AI endpoint
-- `.env.example` — environment variable template
-- `assets/aquasentinel.png` — retained project image
+1. Copy `.env.example` to `.env`.
+2. Add your API key to `OPENAI_API_KEY`.
+3. Optionally set `OPENAI_MODEL` to a model available to your account.
+4. Restart the server.
+
+Never commit `.env` or an API key to GitHub.
+
+## 🌐 GitHub Pages / static hosting
+
+The portfolio can also be deployed as a static site. The narrator and built-in local assistant work without Node.js or an API key.
+
+The optional `/api/chat` OpenAI backend **cannot run on GitHub Pages** because GitHub Pages is static hosting. For the full AI backend, deploy `server.js` to a Node-compatible host and keep the API key in that host's environment variables.
+
+If you only want the static portfolio on GitHub Pages, upload the repository files and publish the site from the `main` branch. The local assistant will be used automatically when the API endpoint is unavailable.
+
+## 📁 Project structure
+
+```text
+.
+├── assets/
+│   └── aquasentinel.png
+├── .env.example
+├── .gitignore
+├── index.html
+├── package.json
+├── script.js
+├── server.js
+├── style.css
+└── README.md
+```
+
+## 🧪 Test
+
+```bash
+npm start
+```
+
+Then check:
+
+```text
+http://localhost:3000/api/health
+```
+
+The response should be JSON. If no API key is configured, it should report local mode.
+
+## 👩‍💻 About
+
+Shreya Sri is an Artificial Intelligence and Data Science undergraduate focused on AI, data, software development and practical digital experiences.
+
+- GitHub: https://github.com/Shreyasri2006
+- LinkedIn: https://www.linkedin.com/in/shreya-sri-844198314
+- Email: shreyasri2613@gmail.com
+
+## 📄 License
+
+MIT License — see `LICENSE`.

@@ -74,7 +74,29 @@ function showAI(){overlay.classList.add("active");overlay.setAttribute("aria-hid
 function hideAI(){overlay.classList.remove("active");overlay.setAttribute("aria-hidden","true");document.body.style.overflow="";speechSynthesis?.cancel()}
 openAi.addEventListener("click",showAI);closeAi.addEventListener("click",hideAI);overlay.addEventListener("click",e=>{if(e.target===overlay)hideAI()});
 function addMsg(text,type){const el=document.createElement("div");el.className=`message ${type}`;if(type==="ai"){const s=document.createElement("small");s.textContent="GUIDE";el.append(s)}el.append(document.createTextNode(text));messages.append(el);messages.scrollTop=messages.scrollHeight;return el}
-async function ask(q){const r=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q})});const d=await r.json();if(!r.ok)throw Error(d.error||"AI is unavailable");return d.answer}
+const localGuideAnswers=[
+  {test:/project|build|built|aqua|trip crafter|learning platform/i,answer:"Shreya has three featured builds. AquaSentinel AI is a completed team project focused on waterborne disease awareness, where she worked as the Frontend and UI Lead and also contributed to the backend. Trip Crafter is currently in development, and she is also building an AI-based learning platform."},
+  {test:/skill|technology|tech stack|know|programming/i,answer:"Shreya's skills include HTML, CSS, JavaScript, Python, SQL, MongoDB, R Programming, C, C++, Java, Microsoft Excel and AI tools. Her main interests are AI, data and software development."},
+  {test:/education|college|degree|study|student/i,answer:"Shreya Sri is pursuing a B.E. in Artificial Intelligence and Data Science at East Point College of Engineering and Technology, with graduation planned for 2028."},
+  {test:/contact|email|reach|linkedin|github/i,answer:"You can contact Shreya at shreyasri2613@gmail.com. Her GitHub is github.com/Shreyasri2006 and her LinkedIn is linkedin.com/in/shreya-sri-844198314."},
+  {test:/tour|portfolio|about|who is shreya|tell me about/i,answer:"Welcome to Shreya's portfolio. She is an Artificial Intelligence and Data Science undergraduate interested in AI, data and software development. Explore the About, Skills and Projects sections, or use the narrator to listen while you read."},
+  {test:/hackathon|journey|experience|achievement/i,answer:"Shreya has participated in hackathon and project experiences and is continuing to build her skills. This portfolio's journey section is designed as an evolving space for future milestones and projects."}
+];
+function localGuide(q){const hit=localGuideAnswers.find(x=>x.test.test(q));return hit?.answer||"I'm Shreya's portfolio guide. Ask me about her education, skills, projects, journey or contact details, and I'll explain them in a simple way."}
+async function ask(q){
+  try{
+    const r=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({message:q})});
+    const type=r.headers.get("content-type")||"";
+    if(!type.includes("application/json")) return localGuide(q);
+    const d=await r.json();
+    if(!r.ok) return d.error||localGuide(q);
+    return d.answer||localGuide(q);
+  }catch(err){
+    // If the page was opened with Live Server, file://, or another static host,
+    // keep the portfolio assistant working instead of showing a JSON parse error.
+    return localGuide(q);
+  }
+}
 async function sendMessage(){const q=input.value.trim();if(!q||send.disabled)return;addMsg(q,"user");input.value="";send.disabled=true;send.textContent="…";const el=addMsg("Thinking…","ai");try{const answer=await ask(q);el.innerHTML="<small>GUIDE</small>"+answer.replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]));if(autoSpeak.checked)speak(answer)}catch(e){el.textContent=e.message}finally{send.disabled=false;send.textContent="→"}}
 send.addEventListener("click",sendMessage);input.addEventListener("keydown",e=>{if(e.key==="Enter")sendMessage()});
 $$(".quick-asks button").forEach(b=>b.addEventListener("click",()=>{input.value=b.dataset.question;sendMessage()}));
