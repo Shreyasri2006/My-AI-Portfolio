@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
-<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#7df5b4"/><stop offset=".5" stop-color="#57e8ff"/><stop offset="1" stop-color="#a878ff"/></linearGradient></defs>
-<circle cx="180" cy="180" r="156" fill="#090d1b" stroke="url(#g)" stroke-width="3"/><path d="M75 236C112 193 126 213 158 166s61-7 83-52 34-22 49-52" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
-<g fill="#0b1020" stroke="url(#g)" stroke-width="4"><circle cx="75" cy="236" r="14"/><circle cx="158" cy="166" r="17"/><circle cx="241" cy="114" r="14"/><circle cx="290" cy="62" r="14"/></g><g fill="#fff"><circle cx="75" cy="236" r="5"/><circle cx="158" cy="166" r="6"/><circle cx="241" cy="114" r="5"/><circle cx="290" cy="62" r="5"/></g>
-<text x="180" y="302" fill="#8cf5c0" font-family="Arial" font-weight="700" font-size="17" text-anchor="middle">JOURNEY VAULT OPEN</text>
-</svg>

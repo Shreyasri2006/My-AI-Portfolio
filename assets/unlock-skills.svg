@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
-<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#57e8ff"/><stop offset="1" stop-color="#a878ff"/></linearGradient><radialGradient id="r"><stop stop-color="#57e8ff" stop-opacity=".45"/><stop offset="1" stop-color="#57e8ff" stop-opacity="0"/></radialGradient></defs>
-<circle cx="180" cy="180" r="156" fill="#090d1b" stroke="url(#g)" stroke-width="3"/><circle cx="180" cy="180" r="122" fill="url(#r)"/><circle cx="180" cy="180" r="94" fill="none" stroke="#a878ff" stroke-opacity=".5" stroke-dasharray="8 13"/>
-<g fill="#0b1020" stroke="url(#g)" stroke-width="3"><rect x="88" y="112" width="82" height="58" rx="15"/><rect x="190" y="112" width="82" height="58" rx="15"/><rect x="139" y="194" width="82" height="58" rx="15"/></g>
-<g fill="#fff" font-family="Arial" font-weight="700" text-anchor="middle"><text x="129" y="147" font-size="17">HTML</text><text x="231" y="147" font-size="17">CSS</text><text x="180" y="229" font-size="17">JS</text></g>
-<path d="M170 141h20M154 170l20 25M206 170l-20 25" stroke="#57e8ff" stroke-width="3" opacity=".7"/><text x="180" y="302" fill="#8cf5e3" font-family="Arial" font-weight="700" font-size="17" text-anchor="middle">SKILL TREE ONLINE</text>
-</svg>
